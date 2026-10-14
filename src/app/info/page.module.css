@@ -1,0 +1,47 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  column-gap: 8vw;
+  width: 100%;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.eyebrow {
+  font-size: var(--font-size-caption);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+}
+.title {
+  font-size: var(--font-size-title);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-8);
+}
+.biography { max-width: 590px; line-height: 1.95; }
+.network {
+  border-left: 1px solid var(--color-line);
+  padding-left: var(--space-8);
+  align-self: center;
+}
+.socialLink {
+  display: block;
+  font-size: var(--font-size-body);
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+.handle { font-size: var(--font-size-caption); }
+
+@media (max-width: 700px) {
+  .layout { display: flex; flex-direction: column; gap: var(--space-8); }
+  .title { margin-bottom: var(--space-6); }
+  .biography { font-size: 0.875rem; line-height: 1.9; }
+  .network {
+    border-left: 0;
+    border-top: 1px solid var(--color-line);
+    padding: var(--space-6) 0 0;
+    align-self: stretch;
+  }
+}

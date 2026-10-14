@@ -1,0 +1,97 @@
+.shell {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.skipLink {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--page-gutter);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transform: translateY(-200%);
+  z-index: 1;
+}
+
+.skipLink:focus { transform: translateY(0); }
+
+.header {
+  min-height: 108px;
+  margin-inline: var(--page-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  border-bottom: 1px solid var(--color-line);
+  padding-block: var(--space-4);
+}
+
+.brand {
+  color: var(--color-ink);
+  font-size: var(--font-size-brand);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.motto {
+  padding: var(--space-2) var(--space-6);
+  border-inline: 1px solid var(--color-line);
+  text-align: center;
+  font-size: var(--font-size-small);
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-8);
+  font-size: var(--font-size-small);
+}
+
+.navigation a { padding-block: var(--space-2); }
+.navigation a[aria-current="page"] {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: var(--space-2);
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--space-16) max(var(--page-gutter), 9vw);
+}
+
+.footer {
+  min-height: 106px;
+  margin-inline: var(--page-gutter);
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--color-line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-size: var(--font-size-caption);
+}
+
+@media (max-width: 700px) {
+  .header { min-height: 112px; grid-template-columns: minmax(0, 1fr) auto; }
+  .brand { font-size: 22px; }
+  .navigation { gap: var(--space-4); font-size: var(--font-size-caption); }
+  .motto {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    border: 0;
+    padding: var(--space-4) 0 0;
+    text-align: left;
+  }
+  .main { padding: var(--space-12) var(--page-gutter); }
+  .footer { min-height: 82px; }
+}
+
+@media (max-width: 360px) {
+  .header { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
+  .navigation { grid-row: 3; justify-content: flex-start; }
+}

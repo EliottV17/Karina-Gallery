@@ -1,0 +1,23 @@
+.introduction { max-width: 42rem; }
+.eyebrow {
+  font-size: var(--font-size-caption);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+}
+.title {
+  font-size: var(--font-size-title);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-8);
+}
+.description { max-width: 32rem; line-height: 1.95; }
+.link {
+  display: inline-block;
+  color: var(--color-ink);
+  margin-top: var(--space-6);
+  text-decoration: underline;
+  text-underline-offset: var(--space-2);
+}
